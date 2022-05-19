@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Quick Project Builder",
   "main": "index.js",
+  "bin": {
+    "qpb": "bin/qpb"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,5 +15,12 @@
     "generator"
   ],
   "author": "Omar Bassam",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-prettier": "^8.5.0",
+    "kolorist": "^1.5.1",
+    "prettier": "^2.6.2",
+    "prompts": "^2.4.2"
+  }
 }
