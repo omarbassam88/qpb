@@ -1,0 +1,16 @@
+{
+  "name": "qpb",
+  "version": "1.0.0",
+  "description": "Quick Project Builder",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "quick",
+    "project",
+    "generator"
+  ],
+  "author": "Omar Bassam",
+  "license": "MIT"
+}
