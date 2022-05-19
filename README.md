@@ -16,18 +16,18 @@ qpb
 
 ## Templates
 
-[] Node JS
-    [] CLI
-    [] Server
-[] Frontend
-    [] vanilla JS/TS
-    [] React
-    [] Vue
-    [] Svelte
-    [] preact
-    [] Alpine
-    [] SolidJS
-[] Desktop 
+- [] Node JS
+    - [] CLI
+    - [] Server
+- [] Frontend
+    - [] vanilla JS/TS
+    - [] React
+    - [] Vue
+    - [] Svelte
+    - [] preact
+    - [] Alpine
+    - [] SolidJS
+- [] Desktop 
 
 ## Development Setup
 
