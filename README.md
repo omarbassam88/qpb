@@ -4,34 +4,49 @@ A terminal Command Line interface to quickly scaffold different projects with st
 
 ## Installation
 
-``` sh
+```sh
 npm i -g qpb
 ```
 
 ## Usage
 
-``` sh
+```sh
 qpb
 ```
 
 ## Templates
 
-- [ ] Node JS
-    - [ ] CLI
-    - [ ] Server
 - [ ] Frontend
-    - [ ] vanilla JS/TS
-    - [ ] React
-    - [ ] Vue
-    - [ ] Svelte
-    - [ ] preact
-    - [ ] Alpine
-    - [ ] SolidJS
-- [ ] Desktop 
+  - [x] vanilla JS/TS
+    - [ ] Vite
+  - [ ] React
+    - [x] Vite
+    - [ ] create-react-app
+    - [ ] Next.js
+    - [ ] Remix.js
+    - [ ] Blitz.js
+  - [ ] Vue
+    - [x] Nuxt.js
+    - [x] Quasar
+    - [ ] Vitepress
+  - [x] Svelte
+    - [x] Vite
+    - [x] Sveltekit
+  - [x] preact
+  - [ ] Alpine
+  - [ ] SolidJS
+- [ ] Backend
+  - [x] Express
+  - [x] Nest JS
+- [x] CLI
+  - [x] create-node-cli
+- [x] Desktop
+  - [x] Tauri
 
 ## Development Setup
 
-``` sh
-pnpm install
+```sh
+git clone http://github.com/omarbassam88/qpb.git
+cd qpb
+npm install
 ```
-

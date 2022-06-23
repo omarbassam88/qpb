@@ -1,53 +1,52 @@
 const { spawnSync } = require('child_process');
 const prompts = require('prompts');
 const { bold, cyan, green, red, blue } = require('kolorist');
+const { projects, categories } = require('./projects');
 
 function welcome() {
+  spawnSync('date', [], {
+    stdio: 'inherit',
+  });
   console.log(
     `Welcome to ${bold(
       cyan('Quick Project Builder')
-    )}\nLet's Builde Awesome Stuff`
+    )}\nLet's Build Awesome Stuff`
   );
 }
 
 async function main() {
-  spawnSync('date', [], {
-    stdio: 'inherit',
-  });
   welcome();
   const answers = await prompts([
     {
       type: 'select',
       name: 'category',
-      message: `${bold('What are we building today')}`,
-      choices: [
-        {
-          title: green('Node JS'),
-          description: 'A Basic Node JS App',
-          value: 'node',
-        },
-        {
-          title: red('Front End App'),
-          description: 'A Basic Frontend Web App',
-          value: 'frontend',
-        },
-        {
-          title: blue('Desktop'),
-          description: 'A Basic Desktop App',
-          value: 'desktop',
-        },
-      ],
+      message: `${bold(blue('What are we building today'))}`,
+      choices: categories,
+    },
+    {
+      type: 'select',
+      name: 'framework',
+      message: `${bold('Which framework do you prefer working with')}`,
+      choices: (prev) => projects.filter((proj) => proj.category === prev),
+    },
+    {
+      type: 'select',
+      name: 'variant',
+      message: `${bold('Which framework would you like to choose')}`,
+      choices: (prev) =>
+        projects.find((proj) => proj.value === prev)['variants'],
     },
   ]);
 
-  switch (answers['category']) {
-    case 'frontend':
-      spawnSync('npm', ['init', 'vite'], { stdio: 'inherit' });
-      break;
-    default:
-      console.log(`Your Selection ${answers['category']} is not yet available`);
-      break;
-  }
+  const selectedProject = projects
+    .find((proj) => proj.value === answers['framework'])
+  ['variants'].find((variant) => variant.value === answers['variant']);
+
+  const command = selectedProject['command'];
+
+  spawnSync(command.split(' ')[0], command.split(' ').slice(1), {
+    stdio: 'inherit',
+  });
 }
 
 main();
