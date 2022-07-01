@@ -35,11 +35,13 @@ qpb
   - [x] preact
   - [ ] Alpine
   - [ ] SolidJS
-- [ ] Backend
+- [x] Backend
   - [x] Express
   - [x] Nest JS
 - [x] CLI
-  - [x] create-node-cli
+  - [x] Node.js
+    - [x] create-node-cli
+    - [x] Ink
 - [x] Desktop
   - [x] Tauri
 
